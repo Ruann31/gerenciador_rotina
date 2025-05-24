@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cadastroLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgBtf"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Criar Conta"
+        android:textColor="@color/lightBule"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/nomeCadastro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Digite seu nome"
+        android:inputType="text"
+        android:padding="15dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/lightBule" />
+
+    <EditText
+        android:id="@+id/senhaCadastro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Digite sua senha"
+        android:inputType="textPassword"
+        android:padding="15dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/lightBule" />
+
+    <Button
+        android:id="@+id/botaoCadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/lightBule" />
+</LinearLayout>
