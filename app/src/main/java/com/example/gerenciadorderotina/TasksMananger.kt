@@ -1,5 +1,8 @@
 package com.example.gerenciadorderotina
 
+import android.annotation.SuppressLint
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.CheckBox
 import android.widget.LinearLayout
@@ -9,6 +12,8 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import android.widget.EditText
+import androidx.appcompat.widget.AppCompatCheckBox
+
 
 class TasksMananger : AppCompatActivity() {
 
@@ -65,17 +70,43 @@ class TasksMananger : AppCompatActivity() {
             .show()
     }
 
+    @SuppressLint("RestrictedApi")
     private fun adicionarTarefa(descricao: String) {
         val tarefa = Tarefa(descricao)
         listaTarefas.add(tarefa)
 
-        val checkbox = CheckBox(this).apply {
+        val checkbox = AppCompatCheckBox(this).apply {
             text = tarefa.descricao
-            setOnCheckedChangeListener { _, isChecked ->
+            setTextColor(Color.BLACK) // Cor do texto
+            supportButtonTintList = ColorStateList.valueOf(Color.BLUE)
+
+            setOnCheckedChangeListener { buttonView, isChecked ->
                 tarefa.feito = isChecked
+
+                if (isChecked) {
+                    AlertDialog.Builder(this@TasksMananger)
+                        .setTitle("Concluir tarefa")
+                        .setMessage("Deseja remover a tarefa concluída?")
+                        .setPositiveButton("Sim") { _, _ ->
+                            val sucesso = db.removerCompromisso(usuarioId, tarefa.descricao)
+                            if (sucesso) {
+                                layoutLista.removeView(buttonView)
+                                Toast.makeText(this@TasksMananger, "Tarefa removida com sucesso!", Toast.LENGTH_SHORT).show()
+                            } else {
+                                Toast.makeText(this@TasksMananger, "Erro ao remover tarefa", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                        .setNegativeButton("Não") { dialog, _ ->
+                            dialog.dismiss()
+                        }
+                        .show()
+                }
             }
         }
 
         layoutLista.addView(checkbox)
     }
+
+
+
 }

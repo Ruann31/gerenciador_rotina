@@ -3,7 +3,7 @@
     android:id="@+id/cadastroLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bgBtf"
+    android:background="@color/white"
     android:orientation="vertical"
     android:padding="20dp"
     android:gravity="center">
@@ -24,7 +24,7 @@
         android:hint="Digite seu nome"
         android:inputType="text"
         android:padding="15dp"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/lightBule"
         android:textColor="@color/lightBule" />
 
     <EditText
@@ -34,14 +34,15 @@
         android:hint="Digite sua senha"
         android:inputType="textPassword"
         android:padding="15dp"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/lightBule"
         android:textColor="@color/lightBule" />
 
     <Button
         android:id="@+id/botaoCadastrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cadastrar"
         android:layout_marginTop="20dp"
-        android:backgroundTint="@color/lightBule" />
+        android:backgroundTint="@color/lightBule"
+        android:text="Cadastrar"
+        android:textColor="@color/white"/>
 </LinearLayout>

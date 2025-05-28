@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bgBtf"
+    android:background="@color/white"
     android:orientation="vertical"
     android:padding="20dp"
     tools:context=".MainActivity">
@@ -22,8 +22,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        tools:orientation="vertical"
+        android:orientation="vertical"
         android:padding="30dp">
 
         <EditText
@@ -34,8 +33,8 @@
             android:padding="15dp"
             android:inputType="text"
             android:hint="Digite seu nome"
-            android:textColor="@color/lightBule"
-            android:backgroundTint="@color/white"/>
+            android:textColor="@color/black"
+            android:backgroundTint="@color/lightBule"/>
 
         <EditText
             android:id="@+id/senhaLogin"
@@ -45,24 +44,26 @@
             android:ems="10"
             android:padding="15dp"
             android:hint="Digite sua senha"
-            android:textColor="@color/lightBule"
-            android:backgroundTint="@color/white"/>
+            android:textColor="@color/black"
+            android:backgroundTint="@color/lightBule"/>
 
-            <Button
-                android:id="@+id/login"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:backgroundTint="@color/lightBule"
-                android:text="Login" />
+        <Button
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/lightBule"
+            android:text="Login"
+            android:textColor="@color/white"/>
 
-            <Button
-                android:id="@+id/criarConta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="@color/gray"
-                android:text="Criar conta" />
+        <Button
+            android:id="@+id/criarConta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/gray"
+            android:text="Criar conta"
+            android:textColor="@color/white"/>
 
     </LinearLayout>
 

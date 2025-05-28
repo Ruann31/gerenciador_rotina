@@ -57,4 +57,18 @@ class BancoHelper(context: Context) : SQLiteOpenHelper(context, "genrenciador_ro
         cursor.close()
         return lista
     }
+
+    fun removerCompromisso(usuarioId: Int, descricao: String): Boolean {
+        val db = writableDatabase
+        return try {
+            val stmt = db.compileStatement("DELETE FROM compromissos WHERE usuario_id = ? AND descricao = ?")
+            stmt.bindLong(1, usuarioId.toLong())
+            stmt.bindString(2, descricao)
+            stmt.executeUpdateDelete() > 0
+        } catch (e: Exception) {
+            e.printStackTrace()
+            false
+        }
+    }
+
 }
